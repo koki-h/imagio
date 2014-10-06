@@ -56,7 +56,7 @@ end
 
 if $0 == __FILE__
   require "pp"
-  open("pages/aaa.html") do |f|
+  open("imagio_pages/aaa.html") do |f|
     pp Imagio.new.pdf_post_data(f.read)
   end
 end
