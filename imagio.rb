@@ -5,11 +5,11 @@ class Imagio
     @TopPage        = "http://#{$IMAGIO_ADDRESS}/web/guest/ja/websys/webArch/topPage.cgi"
     @FaxDocListPage = "http://#{$IMAGIO_ADDRESS}/web/guest/ja/webdocbox/faxDocListPage.cgi"
     @agent = Mechanize.new
-    @agent.post(@TopPage) #まずトップページにアクセスしないとエラーになる
+    @agent.post(@TopPage) #Access top page to prevent error.
   end
 
   def download_fax_doc(recv_date = nil)
-    #与えられた日付に受信した文書をPDF形式でダウンロードする
+    #Download PDF document received in recv_date.
     page = @agent.post(@FaxDocListPage)
     pdf_post_data(page.body).each do |d|
       $stderr.puts d[:date]
