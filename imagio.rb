@@ -2,8 +2,8 @@ require 'mechanize'
 require "base64"
 class Imagio
   def initialize(imagio_address)
-    @TopPage        = "http://#{$IMAGIO_ADDRESS}/web/guest/ja/websys/webArch/topPage.cgi"
-    @FaxDocListPage = "http://#{$IMAGIO_ADDRESS}/web/guest/ja/webdocbox/faxDocListPage.cgi"
+    @TopPage        = "http://#{imagio_address}/web/guest/ja/websys/webArch/topPage.cgi"
+    @FaxDocListPage = "http://#{imagio_address}/web/guest/ja/webdocbox/faxDocListPage.cgi"
     @agent = Mechanize.new
     @agent.post(@TopPage) #Access top page to prevent error.
   end
