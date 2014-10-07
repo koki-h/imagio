@@ -16,9 +16,10 @@ def yesterday
   d = Date.today - 1
   "#{d.year}/#{d.month}/#{d.day}"
 end
-yesterday = "2014/10/3"
+
 saved_files = []
 imagio = Imagio.new(IMAGIO_ADDRESS)
+yesterday = "2014/10/3"
 puts yesterday
 imagio.download_fax_doc(yesterday) do |down_data|
     pdf_filename = down_data[:date].gsub("/","-").gsub(":","") + ".pdf"

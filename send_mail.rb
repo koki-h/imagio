@@ -18,6 +18,6 @@ def send_mail(file)
     to      MAIL_ADDRESS
     subject "FAX received(#{filename})"
     body    "FAX received. filename:#{filename}"
-    add_file :filename => file, :content => File.read(file)
+    add_file :filename => file, :content => File.binread(file)
   end
 end
